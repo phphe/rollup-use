@@ -1,0 +1,28 @@
+{
+  "name": "@rollup-use/js-starter",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "phphe <phphe@outlook.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "compile-build": "tsc --target ES6 --module CommonJS scripts/build.ts",
+    "build": "rollup -c scripts/build.js & node scripts/build.js --report"
+  },
+  "devDependencies": {
+    "@rollup-use/js": "^0.0.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.8",
+    "helper-js": "^2.0.4"
+  }
+}
