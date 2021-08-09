@@ -1,17 +1,23 @@
 {
   "name": "vue2-js-starter",
   "version": "0.1.0",
+  "private": true,
   "license": "ISC",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "compile-build-lib": "tsc --target ES6 --module CommonJS scripts/build.ts",
+    "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "@babel/runtime": "^7.14.8",
+    "helper-js": "^2.0.4",
+    "vue-runtime-helpers": "^1.1.2"
   },
   "devDependencies": {
+    "@rollup-use/core": "^0.0.0",
+    "@rollup-use/vue2-js": "^0.0.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
@@ -20,6 +26,10 @@
     "eslint-plugin-vue": "^6.2.2",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.11"
   }
 }

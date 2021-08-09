@@ -15,17 +15,20 @@ import { terser } from "rollup-plugin-terser"; // to minify bundle
 // don't convert follow to imponst xx from 'xx'
 const cjs = require("@rollup/plugin-commonjs");
 const json = require("@rollup/plugin-json");
+const vue = require("rollup-plugin-vue");
+const postcss = require("rollup-plugin-postcss");
 // @ts-ignore
 import pkg = require("../package.json");
 
 // quick config
-const input = "src/index.js";
+const input = "src/lib-entry.js";
 const outDir = "dist";
 const outputName = resolveOutputName(pkg.name); // the built file name is outDir/outputName.format.js. You can modify it.
 const moduleName = resolveModuleName(pkg.name); // for umd, amd. You can modify it.
 const outputExports = "auto"; // You might get warning 'Mixing named and default exports'. https://rollupjs.org/guide/en/#outputexports
 const external = [...resolveAllDependencies(pkg)];
 const umdExternal = [...resolveUMDDependencies(pkg)]; // umd should bundle dependencies
+const extractCssPath = path.resolve(outDir, `${outputName}.css`);
 
 const getBabelConfig = () => ({
   // .babelrc
@@ -76,7 +79,14 @@ export default <rollup.RollupOptions[]>[
   {
     input,
     external: (source) => belongsTo(source, external),
-    plugins: [babel(esmBabelConfig), node(), cjs(), json()],
+    plugins: [
+      vue({ css: false }),
+      postcss({ extract: extractCssPath }),
+      babel(esmBabelConfig),
+      node(),
+      cjs(),
+      json(),
+    ],
     output: {
       file: path.resolve(outDir, `${outputName}.esm.js`),
       format: "esm",
@@ -89,7 +99,14 @@ export default <rollup.RollupOptions[]>[
   {
     input,
     external: (source) => belongsTo(source, external),
-    plugins: [babel(cjsBabelConfig), node(), cjs(), json()],
+    plugins: [
+      vue({ css: false }),
+      postcss({ extract: extractCssPath }),
+      babel(cjsBabelConfig),
+      node(),
+      cjs(),
+      json(),
+    ],
     output: {
       file: path.resolve(outDir, `${outputName}.cjs.js`),
       format: "cjs",
@@ -102,7 +119,14 @@ export default <rollup.RollupOptions[]>[
   {
     input,
     external: (source) => belongsTo(source, umdExternal),
-    plugins: [babel(umdBabelConfig), node(), cjs(), json()],
+    plugins: [
+      vue({ css: false }),
+      postcss({ extract: extractCssPath }),
+      babel(umdBabelConfig),
+      node(),
+      cjs(),
+      json(),
+    ],
     output: {
       file: path.resolve(outDir, `${outputName}.js`),
       format: "umd",
@@ -117,6 +141,8 @@ export default <rollup.RollupOptions[]>[
     input,
     external: (source) => belongsTo(source, umdExternal),
     plugins: [
+      vue({ css: false }),
+      postcss({ extract: extractCssPath }),
       babel(umdBabelConfig),
       node(),
       cjs(),

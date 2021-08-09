@@ -5,6 +5,7 @@
   "author": "phphe <phphe@outlook.com>",
   "homepage": "",
   "license": "ISC",
+  "private": true,
   "main": "src/index.js",
   "files": [
     "src"
@@ -14,15 +15,15 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "compile-build": "tsc --target ES6 --module CommonJS scripts/build.ts",
-    "build": "rollup -c scripts/build.js & node scripts/build.js --report"
+    "compile-build-lib": "tsc --target ES6 --module CommonJS scripts/build.ts",
+    "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report"
   },
   "devDependencies": {
-    "@rollup-use/js": "^0.0.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
+    "@rollup-use/core": "^0.0.0",
     "helper-js": "^2.0.4"
   }
 }
