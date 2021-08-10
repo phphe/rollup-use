@@ -16,42 +16,40 @@ import { terser } from "rollup-plugin-terser"; // to minify bundle
 const cjs = require("@rollup/plugin-commonjs");
 const json = require("@rollup/plugin-json");
 const vue = require("rollup-plugin-vue");
-const postcss = require("rollup-plugin-postcss");
+const css = require("rollup-plugin-css-only");
+const typescript = require("rollup-plugin-typescript2");
+const replace = require("@rollup/plugin-replace");
 // @ts-ignore
 import pkg = require("../package.json");
 
 // quick config
-const input = "src/lib-entry.js";
+const input = "src/lib-entry.ts";
 const outDir = "dist";
 const outputName = resolveOutputName(pkg.name); // the built file name is outDir/outputName.format.js. You can modify it.
 const moduleName = resolveModuleName(pkg.name); // for umd, amd. You can modify it.
 const outputExports = "auto"; // You might get warning 'Mixing named and default exports'. https://rollupjs.org/guide/en/#outputexports
 const external = [...resolveAllDependencies(pkg)];
 const umdExternal = [...resolveUMDDependencies(pkg)]; // umd should bundle dependencies
-const extractCssPath = path.resolve(outDir, `${outputName}.css`);
+const extractCssPath = path.join(outDir, `${outputName}.css`);
+// for declaration files
+const declarationDir = "types"; //
+const umdReplace = { "process.env.NODE_ENV": JSON.stringify("production") }; // replace process.env.NODE_ENV in umd
 
 const getBabelConfig = () => ({
   // .babelrc
   presets: [
     [
-      "@babel/preset-env",
+      "@vue/cli-plugin-babel/preset",
       {
         useBuiltIns: false,
-        targets: "defaults", // default browsers, coverage 90%
+        polyfills: [],
+        targets: { browsers: "defaults" }, // default browsers, coverage 90%
       },
     ],
   ],
   plugins: [
     "@babel/plugin-transform-runtime",
-    // Stage 1
-    "@babel/plugin-proposal-optional-chaining",
-    // Stage 2
-    "@babel/plugin-proposal-export-namespace-from",
-    // Stage 3
-    "@babel/plugin-syntax-dynamic-import",
-    "@babel/plugin-syntax-import-meta",
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-json-strings",
+    ["@babel/plugin-proposal-optional-chaining", { loose: false }],
   ],
   assumptions: {
     /**
@@ -62,7 +60,13 @@ const getBabelConfig = () => ({
   },
   // for rollup babel plugin
   babelHelpers: "runtime",
-  exclude: [/@babel\/runtime/, /@babel\\runtime/, /regenerator-runtime/, /vue-runtime-helpers/],
+  exclude: [
+    /@babel\/runtime/,
+    /@babel\\runtime/,
+    /regenerator-runtime/,
+    /vue-runtime-helpers/,
+    /tslib/,
+  ],
   extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".vue", ".ts", ".tsx"],
   babelrc: false,
 });
@@ -81,14 +85,24 @@ export default <rollup.RollupOptions[]>[
     external: (source) => belongsTo(source, external),
     plugins: [
       vue({ css: false }),
-      postcss({ extract: extractCssPath }),
-      babel(esmBabelConfig),
+      css({ output: extractCssPath }),
       node(),
+      typescript({
+        useTsconfigDeclarationDir: true,
+        tsconfigOverride: {
+          compilerOptions: {
+            declaration: true,
+            declarationDir,
+          },
+        },
+      }),
+      babel(esmBabelConfig),
       cjs(),
       json(),
     ],
     output: {
-      file: path.resolve(outDir, `${outputName}.esm.js`),
+      dir: "./",
+      entryFileNames: path.join(outDir, `${outputName}.esm.js`),
       format: "esm",
       banner: getBanner(pkg),
       sourcemap: false,
@@ -101,9 +115,10 @@ export default <rollup.RollupOptions[]>[
     external: (source) => belongsTo(source, external),
     plugins: [
       vue({ css: false }),
-      postcss({ extract: extractCssPath }),
-      babel(cjsBabelConfig),
+      css({ output: false }),
       node(),
+      typescript({ tsconfigOverride: { declaration: false } }),
+      babel(cjsBabelConfig),
       cjs(),
       json(),
     ],
@@ -121,9 +136,11 @@ export default <rollup.RollupOptions[]>[
     external: (source) => belongsTo(source, umdExternal),
     plugins: [
       vue({ css: false }),
-      postcss({ extract: extractCssPath }),
-      babel(umdBabelConfig),
+      css({ output: false }),
       node(),
+      replace(umdReplace),
+      typescript({ tsconfigOverride: { declaration: false } }),
+      babel(umdBabelConfig),
       cjs(),
       json(),
     ],
@@ -142,9 +159,11 @@ export default <rollup.RollupOptions[]>[
     external: (source) => belongsTo(source, umdExternal),
     plugins: [
       vue({ css: false }),
-      postcss({ extract: extractCssPath }),
-      babel(umdBabelConfig),
+      css({ output: false }),
       node(),
+      replace(umdReplace),
+      typescript({ tsconfigOverride: { declaration: false } }),
+      babel(umdBabelConfig),
       cjs(),
       json(),
       terser(), // to minify bundle

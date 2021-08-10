@@ -4,21 +4,28 @@ A pure-js npm library bundle tool use rollup.
 
 此工具使用 rollup, 可以打包纯 js 的 npm 库项目. [中文文档](#zh)
 
+## Examples/用例列表
+
+- [js-starter](../js-starter)
+
+You can add your public repo here. 欢迎添加你的项目到这里.
+
 ## Usage
 
 Install dependencies
 
 ```sh
-npm install @rollup-use/core @babel/runtime -save
-npm install typescript --save-dev
+npm install @rollup-use/core typescript --save-dev
+npm install @babel/runtime -save
 ```
 
-Create directory `scripts`, copy `build.ts` into it. Add 2 lines to `scripts` of `package.json` like follow:
+Create directory `scripts`, copy `build.ts` into it. Add 3 lines to `scripts` of `package.json` like follow:
 
 ```json
 "scripts": {
   "compile-build-lib": "tsc --target ES6 --module CommonJS scripts/build.ts",
-  "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report"
+  "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report",
+  "watch-lib": "rollup -c scripts/build.js --watch"
 }
 ```
 
@@ -35,16 +42,17 @@ Don't include core-js in your package.json, including `dependencies` and `devDep
 安装依赖
 
 ```sh
-npm install @rollup-use/core @babel/runtime -save
-npm install typescript --save-dev
+npm install @rollup-use/core typescript --save-dev
+npm install @babel/runtime -save
 ```
 
-创建目录 `scripts`, 把`build.ts`复制进去. 参照如下, 添加两行到`package.json`的`scripts`:
+创建目录 `scripts`, 把`build.ts`复制进去. 参照如下, 添加 3 行到`package.json`的`scripts`:
 
 ```json
 "scripts": {
   "compile-build-lib": "tsc --target ES6 --module CommonJS scripts/build.ts",
-  "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report"
+  "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report",
+  "watch-lib": "rollup -c scripts/build.js --watch"
 }
 ```
 
@@ -52,4 +60,4 @@ npm install typescript --save-dev
 
 ## 排除 core-js
 
-不要在 `package.json` 中包含 `core-js`, 包括 `dependencies` 和 `devDependencies`. 或者你的捆绑结果中会有 `core-js` 导入.
+不要在 `package.json` 中包含 `core-js`, 包括 `dependencies` 和 `devDependencies`. 否则打包结果中会有 `core-js` 导入.

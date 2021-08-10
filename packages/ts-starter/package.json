@@ -1,19 +1,18 @@
 {
-  "name": "@rollup-use/js-starter",
-  "version": "0.0.0",
+  "name": "@rollup-use/ts-starter",
+  "version": "1.0.0",
+  "private": true,
   "description": "> TODO: description",
   "author": "phphe <phphe@outlook.com>",
   "homepage": "",
   "license": "ISC",
-  "private": true,
-  "main": "dist/js-starter.cjs.js",
-  "module": "dist/js-starter.esm.js",
+  "main": "dist/ts-starter.cjs.js",
+  "module": "dist/ts-starter.esm.js",
+  "types": "types/index.d.ts",
   "files": [
-    "src"
+    "lib",
+    "types"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "compile-build-lib": "tsc --target ES6 --module CommonJS scripts/build.ts",
@@ -21,11 +20,13 @@
     "watch-lib": "rollup -c scripts/build.js --watch"
   },
   "devDependencies": {
+    "@rollup-use/core": "^0.0.0",
+    "@rollup-use/ts": "^0.0.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
-    "@rollup-use/core": "^0.0.0",
-    "helper-js": "^2.0.4"
+    "helper-js": "^2.0.4",
+    "tslib": "^2.3.0"
   }
 }
