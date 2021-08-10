@@ -4,7 +4,7 @@
   "description": "A `Vue2`+ `typescript` npm library bundle tool use rollup. 使用 rollup打包 typescript 语言的 Vue2 npm 库项目.",
   "author": "phphe <phphe@outlook.com>",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "lib/index.js",
   "files": [
     "lib"
@@ -24,5 +24,6 @@
   },
   "devDependencies": {
     "typescript": "^4.3.5"
-  }
+  },
+  "gitHead": "69406ac4df1e8cf99be43dc683994b584b9ff4ea"
 }

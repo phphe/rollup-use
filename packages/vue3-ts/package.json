@@ -5,7 +5,7 @@
   "author": "phphe <phphe@outlook.com>",
   "homepage": "",
   "private": true,
-  "license": "ISC",
+  "license": "MIT",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib",

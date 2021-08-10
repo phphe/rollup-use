@@ -2,7 +2,7 @@
   "name": "vue2-ts-starter",
   "version": "0.1.1",
   "private": true,
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/vue2-ts-starter.cjs.js",
   "module": "dist/vue2-ts-starter.esm.js",
   "types": "types/lib-entry.d.ts",

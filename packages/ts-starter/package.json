@@ -5,7 +5,7 @@
   "description": "> TODO: description",
   "author": "phphe <phphe@outlook.com>",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/ts-starter.cjs.js",
   "module": "dist/ts-starter.esm.js",
   "types": "types/index.d.ts",
