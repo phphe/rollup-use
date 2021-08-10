@@ -1,6 +1,6 @@
 {
   "name": "@rollup-use/js-starter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "> TODO: description",
   "author": "phphe <phphe@outlook.com>",
   "homepage": "",
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
-    "@rollup-use/core": "^0.0.1",
+    "@rollup-use/core": "^0.0.2",
     "helper-js": "^2.0.4"
   }
 }

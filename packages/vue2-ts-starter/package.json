@@ -1,6 +1,6 @@
 {
   "name": "vue2-ts-starter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "license": "MIT",
   "main": "dist/vue2-ts-starter.cjs.js",
@@ -27,8 +27,8 @@
     "vue-runtime-helpers": "^1.1.2"
   },
   "devDependencies": {
-    "@rollup-use/core": "^0.0.1",
-    "@rollup-use/ts": "^0.0.1",
+    "@rollup-use/core": "^0.0.2",
+    "@rollup-use/ts": "^0.0.2",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",
