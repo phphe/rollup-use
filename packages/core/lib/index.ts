@@ -61,9 +61,9 @@ export function belongsTo(
   }
 }
 
-export function camelize(str) {
+export function camelize(str: string) {
   return str
-    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
       return index === 0 ? word.toLowerCase() : word.toUpperCase();
     })
     .replace(/\s+/g, "")
@@ -71,12 +71,7 @@ export function camelize(str) {
 }
 
 export function resolveOutputName(pkgName: string) {
-  if (pkgName.includes("/")) {
-    // like '@babel/core', remove '@babel/'
-    let t = pkgName.split("/");
-    pkgName = t[t.length - 1];
-  }
-  return pkgName;
+  return pkgName.replace(/@/g, "").replace(/\//g, "-");
 }
 
 export function resolveModuleName(pkgName: string) {
