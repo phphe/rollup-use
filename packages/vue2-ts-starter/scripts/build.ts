@@ -183,7 +183,7 @@ if (process.argv.includes("--report")) {
   report(outDir);
 }
 
-function getBanner(pkg) {
+function getBanner(pkg: any) {
   return `
 /*!
  * ${pkg.name} v${pkg.version}

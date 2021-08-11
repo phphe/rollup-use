@@ -62,7 +62,12 @@ const getBabelConfig = () => ({
   },
   // for rollup babel plugin
   babelHelpers: "runtime",
-  exclude: [/@babel\/runtime/, /@babel\\runtime/, /regenerator-runtime/, /vue-runtime-helpers/],
+  exclude: [
+    /@babel\/runtime/,
+    /@babel\\runtime/,
+    /regenerator-runtime/,
+    /vue-runtime-helpers/,
+  ],
   extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".vue", ".ts", ".tsx"],
   babelrc: false,
 });
@@ -164,7 +169,7 @@ if (process.argv.includes("--report")) {
   report(outDir);
 }
 
-function getBanner(pkg) {
+function getBanner(pkg: any) {
   return `
 /*!
  * ${pkg.name} v${pkg.version}
