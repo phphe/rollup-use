@@ -21,8 +21,9 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-vue": "^5"
   },
-  "devDependencies": {
-    "typescript": "^4.3.5"
+  "devDependencies": {},
+  "peerDependencies": {
+    "typescript": "^4"
   },
   "gitHead": "69406ac4df1e8cf99be43dc683994b584b9ff4ea"
 }

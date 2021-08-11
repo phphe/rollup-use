@@ -39,11 +39,10 @@ export { default as CustomName3 } from "./LibraryComponent3.vue";
 
 Can export multiple components. Can custom exported name.
 
-Create directory `scripts`, copy `build.ts` into it. Add 3 lines to `scripts` of `package.json` like follow:
+Copy directory `scripts` into your project. Add 2 npm scripts to `scripts` of `package.json` like follow:
 
 ```json
 "scripts": {
-  "compile-build-lib": "tsc --target ES6 --module CommonJS scripts/build.ts",
   "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report",
   "watch-lib": "rollup -c scripts/build.js --watch"
 }
@@ -86,11 +85,10 @@ export { default as CustomName3 } from "./LibraryComponent3.vue";
 
 可以导出多个组件, 导出时可以自定义导出名.
 
-创建目录 `scripts`, 把`build.ts`复制进去. 参照如下, 添加 3 行到`package.json`的`scripts`:
+复制目录 `scripts` 到你的项目. 参照如下, 添加 3 条 npm script 到`package.json`的`scripts`:
 
 ```json
 "scripts": {
-  "compile-build-lib": "tsc --target ES6 --module CommonJS scripts/build.ts",
   "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report",
   "watch-lib": "rollup -c scripts/build.js --watch"
 }

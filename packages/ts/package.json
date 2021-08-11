@@ -18,8 +18,10 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.15.0",
-    "@rollup/plugin-typescript": "^8.2.5",
-    "typescript": "^4.3.5"
+    "@rollup/plugin-typescript": "^8.2.5"
+  },
+  "peerDependencies": {
+    "typescript": "^4"
   },
   "gitHead": "69406ac4df1e8cf99be43dc683994b584b9ff4ea"
 }

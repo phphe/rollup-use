@@ -15,7 +15,6 @@
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "compile-build-lib": "tsc --target ES6 --module CommonJS scripts/build.ts",
     "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report",
     "watch-lib": "rollup -c scripts/build.js --watch"
   },

@@ -37,10 +37,10 @@
     "babel-plugin-module-extension": "^0.1.3",
     "glob": "^7.1.7",
     "rollup": "^2.56.1",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.3.5",
+    "ts-node": "^10.2.0"
   },
-  "devDependencies": {
-    "typescript": "^4.3.5"
-  },
+  "devDependencies": {},
   "gitHead": "69406ac4df1e8cf99be43dc683994b584b9ff4ea"
 }

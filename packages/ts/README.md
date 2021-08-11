@@ -19,11 +19,10 @@ npm install @rollup-use/core @rollup-use/ts typescript --save-dev
 npm install @babel/runtime tslib -save
 ```
 
-Create directory `scripts`, copy `build.ts` into it. Add 3 lines to `scripts` of `package.json` like follow:
+Copy directory `scripts` into your project. Add 2 npm scripts to `scripts` of `package.json` like follow:
 
 ```json
 "scripts": {
-  "compile-build-lib": "tsc --target ES6 --module CommonJS scripts/build.ts",
   "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report",
   "watch-lib": "rollup -c scripts/build.js --watch"
 }
@@ -46,11 +45,10 @@ npm install @rollup-use/core @rollup-use/ts typescript --save-dev
 npm install @babel/runtime tslib -save
 ```
 
-创建目录 `scripts`, 把`build.ts`复制进去. 参照如下, 添加 3 行到`package.json`的`scripts`:
+复制目录 `scripts` 到你的项目. 参照如下, 添加 3 条 npm script 到`package.json`的`scripts`:
 
 ```json
 "scripts": {
-  "compile-build-lib": "tsc --target ES6 --module CommonJS scripts/build.ts",
   "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report",
   "watch-lib": "rollup -c scripts/build.js --watch"
 }

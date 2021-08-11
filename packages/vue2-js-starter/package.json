@@ -9,7 +9,6 @@
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "compile-build-lib": "tsc --target ES6 --module CommonJS scripts/build.ts",
     "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report",
     "watch-lib": "rollup -c scripts/build.js --watch"
   },
