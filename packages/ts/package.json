@@ -1,6 +1,6 @@
 {
   "name": "@rollup-use/ts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A typescript npm library bundle tool use rollup. 使用 rollup 打包 typescript 语言的 npm 库项目.",
   "author": "phphe <phphe@outlook.com>",
   "homepage": "",
