@@ -1,6 +1,6 @@
 {
   "name": "vue2-js-starter",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "license": "MIT",
   "main": "dist/vue2-js-starter.cjs.js",
@@ -18,8 +18,8 @@
     "vue-runtime-helpers": "^1.1.2"
   },
   "devDependencies": {
-    "@rollup-use/core": "^0.0.4",
-    "@rollup-use/vue2-js": "^0.0.3",
+    "@rollup-use/core": "^0.0.5",
+    "@rollup-use/vue2-js": "^0.0.4",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",

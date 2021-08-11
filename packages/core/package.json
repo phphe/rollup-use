@@ -1,6 +1,6 @@
 {
   "name": "@rollup-use/core",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A pure-js npm library bundle tool use rollup. 此工具使用 rollup, 可以打包纯 js 的 npm 库项目.",
   "author": "phphe <phphe@outlook.com>",
   "homepage": "",
@@ -38,9 +38,8 @@
     "glob": "^7.1.7",
     "rollup": "^2.56.1",
     "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.3.5",
-    "ts-node": "^10.2.0"
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
   },
-  "devDependencies": {},
   "gitHead": "69406ac4df1e8cf99be43dc683994b584b9ff4ea"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@rollup-use/vue2-ts",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A `Vue2`+ `typescript` npm library bundle tool use rollup. 使用 rollup打包 typescript 语言的 Vue2 npm 库项目.",
   "author": "phphe <phphe@outlook.com>",
   "homepage": "",
@@ -21,7 +21,6 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-vue": "^5"
   },
-  "devDependencies": {},
   "peerDependencies": {
     "typescript": "^4"
   },

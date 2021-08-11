@@ -1,6 +1,6 @@
 {
   "name": "js-starter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "> TODO: description",
   "author": "phphe <phphe@outlook.com>",
   "homepage": "",
@@ -19,10 +19,9 @@
     "build-lib": "rollup -c scripts/build.js & node scripts/build.js --report",
     "watch-lib": "rollup -c scripts/build.js --watch"
   },
-  "devDependencies": {},
   "dependencies": {
     "@babel/runtime": "^7.14.8",
-    "@rollup-use/core": "^0.0.4",
+    "@rollup-use/core": "^0.0.5",
     "helper-js": "^2.0.4"
   }
 }
