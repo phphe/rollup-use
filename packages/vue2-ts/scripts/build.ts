@@ -117,7 +117,9 @@ export default <rollup.RollupOptions[]>[
       vue({ css: false }),
       css({ output: false }),
       node(),
-      typescript({ tsconfigOverride: { declaration: false } }),
+      typescript({
+        tsconfigOverride: { compilerOptions: { declaration: false } },
+      }),
       babel(cjsBabelConfig),
       cjs(),
       json(),
@@ -139,7 +141,9 @@ export default <rollup.RollupOptions[]>[
       css({ output: false }),
       node(),
       replace(umdReplace),
-      typescript({ tsconfigOverride: { declaration: false } }),
+      typescript({
+        tsconfigOverride: { compilerOptions: { declaration: false } },
+      }),
       babel(umdBabelConfig),
       cjs(),
       json(),
@@ -162,7 +166,9 @@ export default <rollup.RollupOptions[]>[
       css({ output: false }),
       node(),
       replace(umdReplace),
-      typescript({ tsconfigOverride: { declaration: false } }),
+      typescript({
+        tsconfigOverride: { compilerOptions: { declaration: false } },
+      }),
       babel(umdBabelConfig),
       cjs(),
       json(),
