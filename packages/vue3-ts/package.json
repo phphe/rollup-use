@@ -1,6 +1,6 @@
 {
   "name": "@rollup-use/vue3-ts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A `Vue3`+ `typescript` npm library bundle tool use rollup. 使用 rollup打包 typescript 语言的 Vue3 npm 库项目.",
   "author": "phphe <phphe@outlook.com>",
   "homepage": "",
