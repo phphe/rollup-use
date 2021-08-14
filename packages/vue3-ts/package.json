@@ -19,7 +19,8 @@
   "dependencies": {
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-typescript2": "^0.30.0",
-    "rollup-plugin-vue": "^6"
+    "rollup-plugin-vue": "^6",
+    "@vue/cli-plugin-babel": "~4.5.0"
   },
   "peerDependencies": {
     "typescript": "^4"

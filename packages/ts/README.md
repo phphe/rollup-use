@@ -7,6 +7,8 @@ A typescript npm library bundle tool use rollup. Clone [ts-starter](../ts-starte
 ## Examples/用例列表
 
 - [ts-starter](../ts-starter)
+- [phphe/helper-js](https://github.com/phphe/helper-js)
+- [phphe/draggable-helper](https://github.com/phphe/draggable-helper)
 
 You can add your public repo here. 欢迎添加你的项目到这里.
 

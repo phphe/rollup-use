@@ -7,6 +7,7 @@ A `Vue2`+ `typescript` npm library bundle tool use rollup. Clone [vue2-ts-starte
 ## Examples/用例列表
 
 - [vue2-ts-starter](../vue2-ts-starter)
+- [phphe/@he-tree/vue2](https://github.com/phphe/he-tree/tree/master/packages/vue2)
 
 You can add your public repo here. 欢迎添加你的项目到这里.
 
