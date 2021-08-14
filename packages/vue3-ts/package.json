@@ -17,8 +17,7 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "postcss": "^8.3.6",
-    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-postcss": "^3",
     "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-vue": "^6"
   },
