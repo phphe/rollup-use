@@ -1,8 +1,8 @@
 # `@rollup-use/core`
 
-A pure-js npm library bundle tool use rollup.
+A pure-js npm library bundle tool use rollup. Clone [js-starter](../js-starter) to quick start.
 
-此工具使用 rollup, 可以打包纯 js 的 npm 库项目. [中文文档](#zh)
+此工具使用 rollup, 可以打包纯 js 的 npm 库项目. [中文文档](#zh). 可以复制 [js-starter](../js-starter) 以快速开始.
 
 ## Examples/用例列表
 

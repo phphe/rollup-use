@@ -1,8 +1,8 @@
 # `@rollup-use/vue2-js`
 
-A `Vue2`+js npm library bundle tool use rollup.
+A `Vue2`+js npm library bundle tool use rollup. Clone [vue2-js-starter](../vue2-js-starter) to quick start.
 
-此工具使用 rollup, 可以打包纯 js 的 `Vue2` npm 库项目. [中文文档](#zh)
+此工具使用 rollup, 可以打包纯 js 的 `Vue2` npm 库项目. [中文文档](#zh). 可以复制 [vue2-js-starter](../vue2-js-starter) 以快速开始.
 
 ## Examples/用例列表
 

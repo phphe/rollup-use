@@ -1,8 +1,8 @@
 # `@rollup-use/ts`
 
-A typescript npm library bundle tool use rollup.
+A typescript npm library bundle tool use rollup. Clone [ts-starter](../ts-starter) to quick start.
 
-此工具使用 rollup, 可以打包 typescript 语言的 npm 库项目. [中文文档](#zh)
+此工具使用 rollup, 可以打包 typescript 语言的 npm 库项目. [中文文档](#zh). 可以复制 [ts-starter](../ts-starter) 以快速开始.
 
 ## Examples/用例列表
 
