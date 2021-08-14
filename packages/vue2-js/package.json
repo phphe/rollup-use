@@ -1,6 +1,6 @@
 {
   "name": "@rollup-use/vue2-js",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A `Vue2`+js npm library bundle tool use rollup. 使用 rollup打包纯js的 Vue2 npm 库项目.",
   "author": "phphe <phphe@outlook.com>",
   "homepage": "",
